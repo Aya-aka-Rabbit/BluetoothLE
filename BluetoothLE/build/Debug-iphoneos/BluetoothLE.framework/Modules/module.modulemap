@@ -1,0 +1,11 @@
+framework module BluetoothLE {
+  umbrella header "BluetoothLE.h"
+
+  export *
+  module * { export * }
+}
+
+module BluetoothLE.Swift {
+    header "BluetoothLE-Swift.h"
+    requires objc
+}

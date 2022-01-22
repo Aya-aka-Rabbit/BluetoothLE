@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)"
+options: "ad269d58a82675e43935a630bb4a3aabd7655ac7835e220bd99a16bcd87ba1d1"
+build_start_time: [1642845668, 36190032]
+build_end_time: [1642845671, 61517000]
+inputs:
+  "/Users/r.nishizaki/Documents/Work/TechnicalResearch/\u30E9\u30A4\u30D5\u3099\u30E9\u30EA/BluetoothLE/BluetoothLE/Classes/Sample.swift": [1642843364, 683859109]
+  "/Users/r.nishizaki/Documents/Work/TechnicalResearch/\u30E9\u30A4\u30D5\u3099\u30E9\u30EA/BluetoothLE/BluetoothLE/Classes/Sample2.swift": [1642845541, 961882114]

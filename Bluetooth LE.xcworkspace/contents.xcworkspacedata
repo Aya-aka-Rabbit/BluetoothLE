@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:BluetoothLE/BluetoothLE.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:BluetoothLE/../Demo Peripheral(&#x5b50;&#x6a5f;)/Demo Peripheral(&#x5b50;&#x6a5f;).xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:BluetoothLE/../Demo Central(&#x89aa;&#x6a5f;)/Demo Central(&#x89aa;&#x6a5f;).xcodeproj">
+   </FileRef>
+</Workspace>
