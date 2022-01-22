@@ -16,7 +16,7 @@ public class ABC
     
     public func MyPrint()
     {
-        print("変えて?みた")
+        print("aaa")
         
     }
 }
