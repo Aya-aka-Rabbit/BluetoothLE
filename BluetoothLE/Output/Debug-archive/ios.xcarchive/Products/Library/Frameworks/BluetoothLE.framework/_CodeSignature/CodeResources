@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/BluetoothLE-Swift.h</key>
 		<data>
-		wnczcz1OlylsfuzfpEXpHBLOEIM=
+		c7Lc72hWkxkI7RB3B9McR2HtoZE=
 		</data>
 		<key>Headers/BluetoothLE.h</key>
 		<data>
@@ -18,27 +18,27 @@
 		</data>
 		<key>Modules/BluetoothLE.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		NTPLE+n0eZbaLi/HIkiZ8g6JaZI=
+		5ABoxprRwp52btGu+h3pAdfoFro=
 		</data>
 		<key>Modules/BluetoothLE.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		A24gPyP7tyGOd7d4nDPyVu6IST0=
+		xMcizGyRv0IvgmoghVFC2UAQzh8=
 		</data>
 		<key>Modules/BluetoothLE.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		SkJZswHyKIaPuPaP1fcjsSiSrYc=
+		zjuaMApxkc9R+RP3bBkX5pm0Orc=
 		</data>
 		<key>Modules/BluetoothLE.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		NTPLE+n0eZbaLi/HIkiZ8g6JaZI=
+		5ABoxprRwp52btGu+h3pAdfoFro=
 		</data>
 		<key>Modules/BluetoothLE.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		A24gPyP7tyGOd7d4nDPyVu6IST0=
+		xMcizGyRv0IvgmoghVFC2UAQzh8=
 		</data>
 		<key>Modules/BluetoothLE.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		SkJZswHyKIaPuPaP1fcjsSiSrYc=
+		zjuaMApxkc9R+RP3bBkX5pm0Orc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -51,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lliBU9aMJ4LErp9omhjBF5PKJgPovCOmkEDzYjwpSoQ=
+			XeA8wcPxGCz8cDBWyGqV0sIHQFNGNt24xlsHHL1eGMQ=
 			</data>
 		</dict>
 		<key>Headers/BluetoothLE.h</key>
@@ -65,42 +65,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v+29nBX2z0bLL6pBiwu8OUpt4Xf3zaS0zip6abdGmjQ=
+			BoXOx3QP7PsvPJ177PHD2NFp4+8zHj7CPfZqM6UzSOo=
 			</data>
 		</dict>
 		<key>Modules/BluetoothLE.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gnOTpyOt1EgnDOxFeVAKW7p9S7pvGMoSh3kIhj0YBKo=
+			BWtgcGuAMMXGdGPeQJUJSEyx+rJNemYUEXNaQRfkkV4=
 			</data>
 		</dict>
 		<key>Modules/BluetoothLE.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YI4/H1EHPjYblhVRBR4AlzkvosbgIVbrVvknyoH6vzo=
+			7SvKShpG933rUSp8Ih6ap6TmiBSGPAEGlFNgRADLlo8=
 			</data>
 		</dict>
 		<key>Modules/BluetoothLE.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			v+29nBX2z0bLL6pBiwu8OUpt4Xf3zaS0zip6abdGmjQ=
+			BoXOx3QP7PsvPJ177PHD2NFp4+8zHj7CPfZqM6UzSOo=
 			</data>
 		</dict>
 		<key>Modules/BluetoothLE.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gnOTpyOt1EgnDOxFeVAKW7p9S7pvGMoSh3kIhj0YBKo=
+			BWtgcGuAMMXGdGPeQJUJSEyx+rJNemYUEXNaQRfkkV4=
 			</data>
 		</dict>
 		<key>Modules/BluetoothLE.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YI4/H1EHPjYblhVRBR4AlzkvosbgIVbrVvknyoH6vzo=
+			7SvKShpG933rUSp8Ih6ap6TmiBSGPAEGlFNgRADLlo8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

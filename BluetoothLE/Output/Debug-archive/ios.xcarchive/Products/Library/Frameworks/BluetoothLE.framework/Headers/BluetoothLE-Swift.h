@@ -188,6 +188,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreBluetooth;
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -204,6 +206,30 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="BluetoothLE",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+
+SWIFT_CLASS("_TtC11BluetoothLE14CentralService")
+@interface CentralService : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC11BluetoothLE17PeripheralService")
+@interface PeripheralService : NSObject
+/// コンストラクタ
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class CBPeripheralManager;
+
+@interface PeripheralService (SWIFT_EXTENSION(BluetoothLE)) <CBPeripheralManagerDelegate>
+/// 周辺機器マネージャーの状態が更新されるたびに呼び出される
+/// \param peripheral マネージャ
+///
+- (void)peripheralManagerDidUpdateState:(CBPeripheralManager * _Nonnull)peripheral;
+@end
+
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>9EAD2687-A395-4573-BD96-A42C915DC83A</key>
+		<key>1F3D98CC-F739-45F5-809A-2852D35ACD76</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>9EAD2687-A395-4573-BD96-A42C915DC83A.xcactivitylog</string>
+			<string>1F3D98CC-F739-45F5-809A-2852D35ACD76.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,47 +32,13 @@
 			<key>signature</key>
 			<string>Archiving project BluetoothLE with scheme BluetoothLE</string>
 			<key>timeStartedRecording</key>
-			<real>664538466.76681197</real>
+			<real>664611508.318784</real>
 			<key>timeStoppedRecording</key>
-			<real>664538471.82145596</real>
+			<real>664611512.98633599</real>
 			<key>title</key>
 			<string>Archiving project BluetoothLE with scheme BluetoothLE</string>
 			<key>uniqueIdentifier</key>
-			<string>9EAD2687-A395-4573-BD96-A42C915DC83A</string>
-		</dict>
-		<key>ED094803-FA2C-43EB-8DD0-4CD4C61E4CA4</key>
-		<dict>
-			<key>className</key>
-			<string>IDECommandLineBuildLog</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>ED094803-FA2C-43EB-8DD0-4CD4C61E4CA4.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>BluetoothLE project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>BluetoothLE</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Archiving project BluetoothLE with scheme BluetoothLE</string>
-			<key>timeStartedRecording</key>
-			<real>664538460.67017198</real>
-			<key>timeStoppedRecording</key>
-			<real>664538464.64108396</real>
-			<key>title</key>
-			<string>Archiving project BluetoothLE with scheme BluetoothLE</string>
-			<key>uniqueIdentifier</key>
-			<string>ED094803-FA2C-43EB-8DD0-4CD4C61E4CA4</string>
+			<string>1F3D98CC-F739-45F5-809A-2852D35ACD76</string>
 		</dict>
 	</dict>
 </dict>
