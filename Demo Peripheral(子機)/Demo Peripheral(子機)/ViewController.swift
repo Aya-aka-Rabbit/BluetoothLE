@@ -10,9 +10,19 @@ import BluetoothLE
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var text1: UILabel!
+    /// 子機のアドバタイズ名
+    let AdvertisementName = "Sample_Peripheral"
+    
+    /// 子機が提供するサービスのID
+    let ServiceID = "1645070b-d162-1b08-dde0-69d7a4bdfc26"
+    
+    /// 子機のサービスオブジェクト
     var service : PeripheralService? = nil
     
+    /// サービスのIDを表示するラベル
+    @IBOutlet weak var text1: UILabel!
+    
+    /// 画面表示完了時の処理
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +33,7 @@ class ViewController: UIViewController {
     /// アドバタイズを開始して、セントラル(親機)に存在を知らせる
     /// - Parameter sender: ボタン
     @IBAction func onAdvertiseStart(_ sender: Any) {
-        let uuid = UUID().uuidString
+        let uuid = ServiceID
         _ = service?.clearServiceUUID()
         _ = service?.addAdvertisementService(uuid: uuid)
         
@@ -40,24 +50,26 @@ class ViewController: UIViewController {
     /// アドバタイズを停止
     /// - Parameter sender: ボタン
     @IBAction func onAdvertiseStop(_ sender: Any) {
-        _ = try? service?.stop()
+        _ = service?.stop()
     }
 }
 
 extension ViewController : PeripheralServiceDelegate  {
     
+    /// セントラルと通信する際のアドバタイズの名前を取得する
+    /// - Returns: アドバタイズの名前
     func advertisementLocalName() -> String {
-        "Sample_Peripheral"
+        return AdvertisementName
     }
 
     /// Bluetoothの電源が現在オンになった通知
-    func bluetoothPoweredOn() { print("bluetoothPoweredOn") }
+    func bluetoothPoweredOn() { print("PeripheralService + bluetoothPoweredOn") }
    
     /// Bluetoothの電源が現在オフになった通知
-    func bluetoothPoweredOff() { print("bluetoothPoweredOff") }
+    func bluetoothPoweredOff() { print("PeripheralService + bluetoothPoweredOff") }
     
     /// BluetoothLowEnergyの使用が許可されていない通知
-    func bluetoothUnauthorized() { print("bluetoothUnauthorized") }
+    func bluetoothUnauthorized() { print("PeripheralService + bluetoothUnauthorized") }
 
 }
 

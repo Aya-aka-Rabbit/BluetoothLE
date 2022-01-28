@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,11 +13,42 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Demo_Central_親機_" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="ueW-TZ-DE7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmm-B4-cR4">
+                                <rect key="frame" x="35" y="62" width="110" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="WRd-3L-dzv"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="スキャン開始"/>
+                                <connections>
+                                    <action selector="onScanStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hPh-jA-dyl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uol-g0-2Aj">
+                                <rect key="frame" x="173" y="62" width="110" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="LhQ-kR-UOe"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="スキャン停止"/>
+                                <connections>
+                                    <action selector="onAdvertiseStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4tt-yq-VBg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OOH-rb-YQg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kmm-B4-cR4" firstAttribute="baseline" secondItem="Uol-g0-2Aj" secondAttribute="baseline" id="Vtq-ff-doJ"/>
+                            <constraint firstItem="Uol-g0-2Aj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Kmm-B4-cR4" secondAttribute="trailing" constant="8" symbolic="YES" id="eCi-q7-Wfd"/>
+                            <constraint firstItem="OOH-rb-YQg" firstAttribute="trailing" secondItem="Uol-g0-2Aj" secondAttribute="trailing" constant="131" id="lbc-oc-Wkj"/>
+                            <constraint firstItem="Kmm-B4-cR4" firstAttribute="leading" secondItem="OOH-rb-YQg" secondAttribute="leading" constant="35" id="wiZ-CA-QoR"/>
+                            <constraint firstItem="Kmm-B4-cR4" firstAttribute="top" secondItem="OOH-rb-YQg" secondAttribute="top" constant="18" id="z82-28-iov"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
