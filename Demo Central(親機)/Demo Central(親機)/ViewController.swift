@@ -58,6 +58,7 @@ extension ViewController : CentralerviceDelegate  {
     /// - Returns: true:接続する false:接続しない
     func doWantToConnect(information data: DiscoveryPeripheralData) -> Bool {
         scanCompleted = AdvertisementName == data.advertisementName ?? "";
+        print(data.advertisementName)
         return scanCompleted;
     }
     
@@ -65,6 +66,9 @@ extension ViewController : CentralerviceDelegate  {
     /// - Parameters:
     /// - Returns: true:停止する false:停止しない
     func doWantToStopScanning() -> Bool {
+        if scanCompleted {
+            print("scanCompleted!!")
+        }
         return scanCompleted;
     }
     /// Bluetoothの電源が現在オンになった通知
