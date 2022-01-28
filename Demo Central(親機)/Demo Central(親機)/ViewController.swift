@@ -72,13 +72,13 @@ extension ViewController : CentralerviceDelegate  {
         return scanCompleted;
     }
     /// Bluetoothの電源が現在オンになった通知
-    func bluetoothPoweredOn() { print("Centralervice + bluetoothPoweredOn") }
+    func bluetoothPoweredOn() { print("Central Service + bluetoothPoweredOn") }
    
     /// Bluetoothの電源が現在オフになった通知
-    func bluetoothPoweredOff() { print("Centralervice + bluetoothPoweredOff") }
+    func bluetoothPoweredOff() { print("Central Service + bluetoothPoweredOff") }
     
     /// BluetoothLowEnergyの使用が許可されていない通知
-    func bluetoothUnauthorized() { print("Centralervice + bluetoothUnauthorized") }
+    func bluetoothUnauthorized() { print("Central Service + bluetoothUnauthorized") }
 
 }
 

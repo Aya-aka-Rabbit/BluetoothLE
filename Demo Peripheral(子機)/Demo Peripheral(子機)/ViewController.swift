@@ -63,13 +63,13 @@ extension ViewController : PeripheralServiceDelegate  {
     }
 
     /// Bluetoothの電源が現在オンになった通知
-    func bluetoothPoweredOn() { print("PeripheralService + bluetoothPoweredOn") }
+    func bluetoothPoweredOn() { print("Peripheral Service + bluetoothPoweredOn") }
    
     /// Bluetoothの電源が現在オフになった通知
-    func bluetoothPoweredOff() { print("PeripheralService + bluetoothPoweredOff") }
+    func bluetoothPoweredOff() { print("Peripheral Service + bluetoothPoweredOff") }
     
     /// BluetoothLowEnergyの使用が許可されていない通知
-    func bluetoothUnauthorized() { print("PeripheralService + bluetoothUnauthorized") }
+    func bluetoothUnauthorized() { print("Peripheral Service + bluetoothUnauthorized") }
 
 }
 
