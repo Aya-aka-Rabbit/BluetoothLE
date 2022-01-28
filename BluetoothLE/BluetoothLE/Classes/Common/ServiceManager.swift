@@ -8,14 +8,9 @@
 import Foundation
 
 public protocol Service {
-    var serviceId : String { get }
+    var identifier : String { get }
 }
 
-
-
-
-
-/// <#Description#>
 final public class ServiceManager {
     
     static var peripheralService : PeripheralService? = nil

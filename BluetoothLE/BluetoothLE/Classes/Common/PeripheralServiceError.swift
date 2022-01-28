@@ -7,12 +7,10 @@
 
 import Foundation
 
-
-/// WebAPIのエラー
+/// PeripheralServiceのエラー
 public enum PeripheralServiceError: Error {
     /// アドバタイズサービスUUIDが追加されていないため、アドバタイズを開始できない
     case AdvertisementServiceIdNotAdded
     /// 既にアドバタイズが実行されている
     case AlreadyAdvertised
 }
-

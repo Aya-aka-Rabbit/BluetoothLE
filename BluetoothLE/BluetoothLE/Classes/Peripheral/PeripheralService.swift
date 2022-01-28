@@ -15,8 +15,8 @@ final public class PeripheralService : NSObject {
     // ペリフェラルマネージャ
     var manager: CBPeripheralManager? = nil
     
-    // PeripheralServiceのUUID
-    let uuid = UUID().uuidString
+    // PeripheralServiceのidentifier
+    let id = UUID().uuidString
     
     // アドバタイズのサービスIDリスト
     var serviceUUID : [CBUUID] = []
@@ -42,9 +42,9 @@ final public class PeripheralService : NSObject {
 // MARK: - 外部公開
 extension PeripheralService : Service {
     
-    /// PeripheralServiceのID
-    public var serviceId: String {
-        return uuid
+    /// PeripheralServiceのidentifier
+    public var identifier: String {
+        return id
     }
     
     /// アドバタイズ実行状態
@@ -74,7 +74,7 @@ extension PeripheralService : Service {
     }
     
     /// アドバタイズを開始
-    /// - Returns: true:成功 flase:失敗
+    /// - Returns: true:成功 false:失敗
     /// - throws: PeripheralServiceError.AdvertisementServiceIdNotAdded
     ///
     ///  対策: AddAdvertisementService(...)でサービスを追加してください
@@ -110,7 +110,7 @@ extension PeripheralService : Service {
     }
     
     /// アドバタイズを停止
-    /// - Returns: true:成功 flase:失敗
+    /// - Returns: true:成功 false:失敗
     public func stop() -> Bool {
         guard manager != nil else { return false }
         

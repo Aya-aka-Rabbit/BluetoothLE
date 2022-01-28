@@ -10,12 +10,12 @@ import Foundation
 // MARK: - 必須プロトコル
 public protocol PeripheralServiceDelegate : BluetoothLEStateDelegate {
     
-    /// セントラルと通信する際のアドバタイズの名前
+    /// セントラルと通信する際のアドバタイズの名前を取得する
     /// - Returns: アドバタイズの名前
     func advertisementLocalName() -> String
 }
 
-// MARK: - オプショナルプロトコル
+// MARK: - BluetoothLEStateDelegateオプショナルプロトコル
 public extension PeripheralServiceDelegate {
     
     /// Bluetoothの電源が現在オンになった通知
