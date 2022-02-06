@@ -21,10 +21,11 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		4615B29D27AE4F2C000D634A /* ResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615B29C27AE4F2C000D634A /* ResponseCode.swift */; };
+		463E9FB427AE251300D4B13D /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463E9FB327AE251300D4B13D /* RequestData.swift */; };
+		463E9FB827AE32FC00D4B13D /* ConnectedCentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463E9FB727AE32FC00D4B13D /* ConnectedCentral.swift */; };
 		46443454279BFA6400C569F1 /* BluetoothLE.h in Headers */ = {isa = PBXBuildFile; fileRef = 46443453279BFA6400C569F1 /* BluetoothLE.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		46443465279BFAAD00C569F1 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46443464279BFAAD00C569F1 /* Sample.swift */; };
-		464435C4279C045D00C569F1 /* Sample2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464435C3279C045D00C569F1 /* Sample2.swift */; };
-		46456DB027A377C00069EB84 /* CentralerviceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46456DAF27A377C00069EB84 /* CentralerviceDelegate.swift */; };
+		46456DB027A377C00069EB84 /* CentralServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46456DAF27A377C00069EB84 /* CentralServiceDelegate.swift */; };
 		46456DB227A378350069EB84 /* CentralService+CentralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46456DB127A378350069EB84 /* CentralService+CentralManagerDelegate.swift */; };
 		46456DB427A37A530069EB84 /* CentralServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46456DB327A37A530069EB84 /* CentralServiceError.swift */; };
 		4657F45B279CF80E00C9B84C /* CentralService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657F45A279CF80E00C9B84C /* CentralService.swift */; };
@@ -34,15 +35,22 @@
 		4657F466279D1A2100C9B84C /* PeripheralServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657F465279D1A2100C9B84C /* PeripheralServiceError.swift */; };
 		4657F468279D240500C9B84C /* PeripheralService+PeripheralManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657F467279D240500C9B84C /* PeripheralService+PeripheralManagerDelegate.swift */; };
 		4657F46C279D24DE00C9B84C /* BluetoothLEStateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657F46B279D24DE00C9B84C /* BluetoothLEStateDelegate.swift */; };
+		4669C6DE27A62EE6003AB890 /* ConnectedPeripheral+CBPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4669C6DD27A62EE6003AB890 /* ConnectedPeripheral+CBPeripheralDelegate.swift */; };
+		4669C6E027A6399C003AB890 /* ConnectedPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4669C6DF27A6399C003AB890 /* ConnectedPeripheralDelegate.swift */; };
+		4669C6E227A65AA1003AB890 /* PeripheralServiceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4669C6E127A65AA1003AB890 /* PeripheralServiceBuilder.swift */; };
+		467A104827AF671000C72A59 /* CBCharacteristic+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A104727AF671000C72A59 /* CBCharacteristic+Common.swift */; };
+		467A104A27AF682B00C72A59 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467A104927AF682B00C72A59 /* ResponseData.swift */; };
+		46A3AA3D27A4D81600AA4D53 /* ConnectedPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A3AA3C27A4D81600AA4D53 /* ConnectedPeripheral.swift */; };
 		46D6571327A39D48003C5563 /* DiscoveryPeripheralData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D6571227A39D48003C5563 /* DiscoveryPeripheralData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4615B29C27AE4F2C000D634A /* ResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCode.swift; sourceTree = "<group>"; };
+		463E9FB327AE251300D4B13D /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
+		463E9FB727AE32FC00D4B13D /* ConnectedCentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedCentral.swift; sourceTree = "<group>"; };
 		46443450279BFA6400C569F1 /* BluetoothLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BluetoothLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46443453279BFA6400C569F1 /* BluetoothLE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluetoothLE.h; sourceTree = "<group>"; };
-		46443464279BFAAD00C569F1 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
-		464435C3279C045D00C569F1 /* Sample2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample2.swift; sourceTree = "<group>"; };
-		46456DAF27A377C00069EB84 /* CentralerviceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralerviceDelegate.swift; sourceTree = "<group>"; };
+		46456DAF27A377C00069EB84 /* CentralServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralServiceDelegate.swift; sourceTree = "<group>"; };
 		46456DB127A378350069EB84 /* CentralService+CentralManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CentralService+CentralManagerDelegate.swift"; sourceTree = "<group>"; };
 		46456DB327A37A530069EB84 /* CentralServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralServiceError.swift; sourceTree = "<group>"; };
 		4657F45A279CF80E00C9B84C /* CentralService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralService.swift; sourceTree = "<group>"; };
@@ -52,6 +60,12 @@
 		4657F465279D1A2100C9B84C /* PeripheralServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralServiceError.swift; sourceTree = "<group>"; };
 		4657F467279D240500C9B84C /* PeripheralService+PeripheralManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PeripheralService+PeripheralManagerDelegate.swift"; sourceTree = "<group>"; };
 		4657F46B279D24DE00C9B84C /* BluetoothLEStateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothLEStateDelegate.swift; sourceTree = "<group>"; };
+		4669C6DD27A62EE6003AB890 /* ConnectedPeripheral+CBPeripheralDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConnectedPeripheral+CBPeripheralDelegate.swift"; sourceTree = "<group>"; };
+		4669C6DF27A6399C003AB890 /* ConnectedPeripheralDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedPeripheralDelegate.swift; sourceTree = "<group>"; };
+		4669C6E127A65AA1003AB890 /* PeripheralServiceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralServiceBuilder.swift; sourceTree = "<group>"; };
+		467A104727AF671000C72A59 /* CBCharacteristic+Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CBCharacteristic+Common.swift"; sourceTree = "<group>"; };
+		467A104927AF682B00C72A59 /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		46A3AA3C27A4D81600AA4D53 /* ConnectedPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedPeripheral.swift; sourceTree = "<group>"; };
 		46D6571227A39D48003C5563 /* DiscoveryPeripheralData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryPeripheralData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +80,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		463E9FB527AE257E00D4B13D /* ConnectedPeripheral */ = {
+			isa = PBXGroup;
+			children = (
+				46A3AA3C27A4D81600AA4D53 /* ConnectedPeripheral.swift */,
+				4669C6DD27A62EE6003AB890 /* ConnectedPeripheral+CBPeripheralDelegate.swift */,
+				4669C6DF27A6399C003AB890 /* ConnectedPeripheralDelegate.swift */,
+			);
+			path = ConnectedPeripheral;
+			sourceTree = "<group>";
+		};
+		463E9FB627AE32EC00D4B13D /* ConnectedCentral */ = {
+			isa = PBXGroup;
+			children = (
+				463E9FB727AE32FC00D4B13D /* ConnectedCentral.swift */,
+			);
+			path = ConnectedCentral;
+			sourceTree = "<group>";
+		};
 		46443446279BFA6400C569F1 = {
 			isa = PBXGroup;
 			children = (
@@ -94,11 +126,12 @@
 		46443463279BFA9D00C569F1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4657F460279D00FA00C9B84C /* Common */,
 				4657F45F279D00DA00C9B84C /* Central */,
+				4657F460279D00FA00C9B84C /* Common */,
+				463E9FB627AE32EC00D4B13D /* ConnectedCentral */,
+				463E9FB527AE257E00D4B13D /* ConnectedPeripheral */,
+				467A104B27AF6F6100C72A59 /* Data */,
 				4657F45E279D00C300C9B84C /* Peripheral */,
-				46443464279BFAAD00C569F1 /* Sample.swift */,
-				464435C3279C045D00C569F1 /* Sample2.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -107,8 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				4657F45C279CF8BD00C9B84C /* PeripheralService.swift */,
-				4657F463279D0CD600C9B84C /* PeripheralServiceDelegate.swift */,
 				4657F467279D240500C9B84C /* PeripheralService+PeripheralManagerDelegate.swift */,
+				4657F463279D0CD600C9B84C /* PeripheralServiceDelegate.swift */,
 			);
 			path = Peripheral;
 			sourceTree = "<group>";
@@ -117,9 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				4657F45A279CF80E00C9B84C /* CentralService.swift */,
-				46456DAF27A377C00069EB84 /* CentralerviceDelegate.swift */,
 				46456DB127A378350069EB84 /* CentralService+CentralManagerDelegate.swift */,
-				46D6571227A39D48003C5563 /* DiscoveryPeripheralData.swift */,
+				46456DAF27A377C00069EB84 /* CentralServiceDelegate.swift */,
 			);
 			path = Central;
 			sourceTree = "<group>";
@@ -127,12 +159,25 @@
 		4657F460279D00FA00C9B84C /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				4657F461279D028200C9B84C /* ServiceManager.swift */,
-				4657F465279D1A2100C9B84C /* PeripheralServiceError.swift */,
 				4657F46B279D24DE00C9B84C /* BluetoothLEStateDelegate.swift */,
+				467A104727AF671000C72A59 /* CBCharacteristic+Common.swift */,
 				46456DB327A37A530069EB84 /* CentralServiceError.swift */,
+				4669C6E127A65AA1003AB890 /* PeripheralServiceBuilder.swift */,
+				4657F465279D1A2100C9B84C /* PeripheralServiceError.swift */,
+				4615B29C27AE4F2C000D634A /* ResponseCode.swift */,
+				4657F461279D028200C9B84C /* ServiceManager.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		467A104B27AF6F6100C72A59 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				46D6571227A39D48003C5563 /* DiscoveryPeripheralData.swift */,
+				463E9FB327AE251300D4B13D /* RequestData.swift */,
+				467A104927AF682B00C72A59 /* ResponseData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,14 +285,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				4657F46C279D24DE00C9B84C /* BluetoothLEStateDelegate.swift in Sources */,
+				463E9FB827AE32FC00D4B13D /* ConnectedCentral.swift in Sources */,
 				46456DB427A37A530069EB84 /* CentralServiceError.swift in Sources */,
+				4669C6E027A6399C003AB890 /* ConnectedPeripheralDelegate.swift in Sources */,
 				4657F45B279CF80E00C9B84C /* CentralService.swift in Sources */,
+				4669C6E227A65AA1003AB890 /* PeripheralServiceBuilder.swift in Sources */,
+				463E9FB427AE251300D4B13D /* RequestData.swift in Sources */,
+				4615B29D27AE4F2C000D634A /* ResponseCode.swift in Sources */,
 				4657F462279D028200C9B84C /* ServiceManager.swift in Sources */,
+				467A104A27AF682B00C72A59 /* ResponseData.swift in Sources */,
 				4657F466279D1A2100C9B84C /* PeripheralServiceError.swift in Sources */,
-				464435C4279C045D00C569F1 /* Sample2.swift in Sources */,
-				46456DB027A377C00069EB84 /* CentralerviceDelegate.swift in Sources */,
-				46443465279BFAAD00C569F1 /* Sample.swift in Sources */,
+				46456DB027A377C00069EB84 /* CentralServiceDelegate.swift in Sources */,
+				4669C6DE27A62EE6003AB890 /* ConnectedPeripheral+CBPeripheralDelegate.swift in Sources */,
 				4657F468279D240500C9B84C /* PeripheralService+PeripheralManagerDelegate.swift in Sources */,
+				46A3AA3D27A4D81600AA4D53 /* ConnectedPeripheral.swift in Sources */,
+				467A104827AF671000C72A59 /* CBCharacteristic+Common.swift in Sources */,
 				4657F464279D0CD600C9B84C /* PeripheralServiceDelegate.swift in Sources */,
 				46D6571327A39D48003C5563 /* DiscoveryPeripheralData.swift in Sources */,
 				46456DB227A378350069EB84 /* CentralService+CentralManagerDelegate.swift in Sources */,

@@ -13,9 +13,21 @@ public protocol Service {
 
 final public class ServiceManager {
     
-    static var peripheralService : PeripheralService? = nil
+    /// バッテリ情報サービスのUUID
+    /// - Note: https://btprodspecificationrefs.blob.core.windows.net/assigned-values/16-bit%20UUID%20Numbers%20Document.pdf
+    static let batteryAppleServiceUUID : String = "180F"
     
-    static var centralService : CentralService? = nil
+    /// 現在日時情報サービスのUUID
+    /// - Note: https://btprodspecificationrefs.blob.core.windows.net/assigned-values/16-bit%20UUID%20Numbers%20Document.pdf
+    static let currentTimeAppleServiceUUID : String = "1805"
+    
+    /// デバイス情報サービスのUUID
+    /// - Note: https://btprodspecificationrefs.blob.core.windows.net/assigned-values/16-bit%20UUID%20Numbers%20Document.pdf
+    static let deviceInformationAppleServiceUUID : String = "180A"
+    
+    static private var peripheralService : PeripheralService? = nil
+    
+    static private var centralService : CentralService? = nil
     
     public static func sharedPeripheral() -> PeripheralService
     {

@@ -11,4 +11,7 @@ import Foundation
 public enum CentralServiceError: Error {
     /// 既にスキャンが実行されている
     case AlreadyScanning
+    
+    /// 既に接続されている
+    case AlreadyConnected
 }

@@ -10,19 +10,29 @@ import CoreBluetooth
 
 final public class CentralService : NSObject {
  
-    // セントラルマネージャ
-    var manager: CBCentralManager?
+    /// セントラルマネージャ
+    private var manager: CBCentralManager?
     
-    // CentralServiceのidentifier
+    /// CentralServiceのidentifier
     public let id = UUID().uuidString
     
-    // デリゲート
-    public var delegate: CentralerviceDelegate? = nil
+    /// デリゲート
+    public var delegate: CentralServiceDelegate? = nil
     
-    // セントラルマネージャオプション
-    let managerOptions = [
+    /// セントラルマネージャオプション
+    private let managerOptions = [
         // Bluetoothが電源オフ状態にある場合にシステムが警告するようにする
         CBCentralManagerOptionShowPowerAlertKey: true
+    ]
+    
+    /// 接続時のオプション
+    private let connectOptions = [
+        // 周辺機器をバックグラウンドで接続するときにシステムがアラートを表示するかどうか
+        CBConnectPeripheralOptionNotifyOnConnectionKey: true,
+        // バックグラウンドで周辺機器を切断したときにシステムがアラートを表示するかどうか
+        CBConnectPeripheralOptionNotifyOnDisconnectionKey: true,
+        // 周辺機器から送信された通知に対してシステムがアラートを表示するかどうか
+        CBConnectPeripheralOptionNotifyOnNotificationKey: true
     ]
     
     /// コンストラクタ
@@ -57,7 +67,7 @@ extension CentralService : Service {
     /// - Note: 近くにある周辺機器を全て探すため、非効率
     ///
     ///  startWithServiceIdの使用を推奨する
-    public func start(allowDuplicates:Bool = false) throws -> Bool {
+    func start(allowDuplicates:Bool = false) throws -> Bool {
         
         return try startWithServiceId(id:"", allowDuplicates: allowDuplicates)
     }
@@ -107,5 +117,62 @@ extension CentralService : Service {
         }
         
         return true;
+    }
+    
+    /// 子機(ペリフェラル)との接続を行う
+    /// - Parameters:
+    ///   - data: 検出時の子機(ペリフェラル)の情報
+    /// - Returns: 接続した子機(ペリフェラル)オブジェクト
+    /// - throws: CentralServiceError.AlreadyConnected
+    ///
+    ///  対策: 既に接続されているため、一度切断してください
+    public func connect(information data:DiscoveryPeripheralData) throws -> ConnectedPeripheral? {
+        
+        guard let _ = data.discoveryTime else { return nil}
+        guard let _ = data.rssi else { return nil }
+        guard let _ = data.peripheral else { return nil }
+        if data.peripheral?.state == .connected { throw CentralServiceError.AlreadyConnected }
+        if data.peripheral?.state == .connecting { throw CentralServiceError.AlreadyConnected }
+        
+        let connectionObject = ConnectedPeripheral(peripheral: data.peripheral!, discoveryData: data)
+        
+        // 接続
+        manager?.connect(data.peripheral!, options: connectOptions)
+        
+        return connectionObject
+    }
+    
+    /// 子機(ペリフェラル)との再接続を行う
+    /// - Parameters:
+    ///   - connection: 接続した子機(ペリフェラル)オブジェクト
+    /// - Returns: true:成功 false:失敗
+    /// - throws: CentralServiceError.AlreadyConnected
+    ///
+    ///  対策: 既に接続されているため、一度切断してください
+    public func reconnect(connection:ConnectedPeripheral) throws-> Bool {
+        
+        guard let _ = connection.discoveryData.discoveryTime else { return false }
+        guard let _ = connection.discoveryData.rssi else { return false }
+        guard let _ = connection.discoveryData.peripheral else { return false }
+        if connection.state == .connected { throw CentralServiceError.AlreadyConnected }
+        if connection.state == .connecting { throw CentralServiceError.AlreadyConnected }
+        
+        // 接続
+        manager?.connect(connection.peripheral, options: connectOptions)
+        
+        return true
+    }
+    
+    /// 子機(ペリフェラル)との接続を切断する
+    /// - Parameter connection: 接続した子機(ペリフェラル)オブジェクト
+    /// - Returns: true:成功 false:失敗
+    public func disconnect(connection:ConnectedPeripheral) -> Bool {
+        
+        if connection.state == .disconnected { return false }
+        if connection.state == .disconnecting { return false }
+        
+        manager?.cancelPeripheralConnection(connection.peripheral)
+    
+        return true
     }
 }

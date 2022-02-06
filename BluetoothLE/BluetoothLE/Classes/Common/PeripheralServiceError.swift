@@ -13,4 +13,8 @@ public enum PeripheralServiceError: Error {
     case AdvertisementServiceIdNotAdded
     /// 既にアドバタイズが実行されている
     case AlreadyAdvertised
+    /// 接続後にサービスのフェッチがされていない
+    case NotFetchedServices
+    /// 接続後にサービス内データのフェッチがされていない
+    case NotFetchCharacteristics
 }

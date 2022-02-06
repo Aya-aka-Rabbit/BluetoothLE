@@ -42,19 +42,17 @@ extension CentralService : CBCentralManagerDelegate {
                                advertisementData: [String : Any],
                                rssi RSSI: NSNumber) {
         
-        defer {
-            if delegate?.doWantToStopScanning() ?? false {
-                _ = stop()
-            }
-        }
-        
-        var data = DiscoveryPeripheralData()
+        var data = DiscoveryPeripheralData(peripheral)
         data.rssi = Int(truncating: RSSI)
         
         // 子機(ペリフェラル)のアドバタイズの名前を取得
-        data.advertisementName = peripheral.name
+        if let localName = advertisementData[CBAdvertisementDataLocalNameKey] as? String {
+            data.advertisementName = localName
+        }
+        
+        data.name = peripheral.name
 
-        // 取れる時と取れない時があるのでコメントアウト　※今後取れるかもしれないのでコードは残しておく
+        // 取れる時と取れない時があるのでコメントアウト　※今後正しく取れるかもしれないのでコードは残しておく
         // アドバタイズのサービスIDを指定してスキャンした場合
         // 　- フォア/バッグ両方とも取得可能
         // アドバタイズのサービスIDを指定せず全てを対象にスキャンした場合
@@ -83,10 +81,33 @@ extension CentralService : CBCentralManagerDelegate {
     
         // 検出通知
         delegate?.didDiscoveredPeripheral(information: data, isConnectable: isConnectable)
-        
-        // 接続確認通知
-        // 接続しない場合は、何もしない
-        let result = delegate?.doWantToConnect(information: data) ?? false
-        if result == false { return }
+    }
+    
+    /// 子機(ペリフェラル)との接続に成功した場合に呼び出される
+    /// - Parameters:
+    ///   - central: マネージャ
+    ///   - peripheral: 子機(ペリフェラル)
+    public func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        delegate?.didPeripheralConnect(peripheralId: peripheral.identifier.uuidString, error: nil)
+    }
+    
+    /// 子機(ペリフェラル)との接続に失敗した場合に呼び出される
+    /// - Parameters:
+    ///   - central: マネージャ
+    ///   - peripheral: 子機(ペリフェラル)
+    ///   - error: エラー情報
+    public func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+        delegate?.didPeripheralConnect(peripheralId: peripheral.identifier.uuidString, error: error)
+    }
+    
+    /// 子機(ペリフェラル)と切断した場合に呼び出される
+    /// - Parameters:
+    ///   - central: マネージャ
+    ///   - peripheral: 子機(ペリフェラル)
+    ///   - error: エラー情報
+    /// - Note: 接続を切断したとしても、基盤となる物理リンクがすぐに切断されるとは限りません
+    public func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral,
+                               error: Error?) {
+        delegate?.didPeripheralDisconnect(peripheralId: peripheral.identifier.uuidString, error: error)
     }
 }

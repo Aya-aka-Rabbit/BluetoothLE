@@ -15,6 +15,7 @@
 		46443504279C012800C569F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46443502279C012800C569F1 /* LaunchScreen.storyboard */; };
 		464435EA279C0F7800C569F1 /* BluetoothLE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464435E9279C0F7800C569F1 /* BluetoothLE.framework */; };
 		464435EB279C0F7800C569F1 /* BluetoothLE.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 464435E9279C0F7800C569F1 /* BluetoothLE.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		464695CC27A4FC8B00F3AD78 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464695CB27A4FC8B00F3AD78 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,7 @@
 		46443503279C012800C569F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46443505279C012800C569F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		464435E9279C0F7800C569F1 /* BluetoothLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BluetoothLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		464695CB27A4FC8B00F3AD78 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				464434F7279C012600C569F1 /* AppDelegate.swift */,
 				464434F9279C012600C569F1 /* SceneDelegate.swift */,
 				464434FB279C012600C569F1 /* ViewController.swift */,
+				464695CB27A4FC8B00F3AD78 /* DetailViewController.swift */,
 				464434FD279C012600C569F1 /* Main.storyboard */,
 				46443500279C012800C569F1 /* Assets.xcassets */,
 				46443502279C012800C569F1 /* LaunchScreen.storyboard */,
@@ -169,6 +172,7 @@
 				464434FC279C012600C569F1 /* ViewController.swift in Sources */,
 				464434F8279C012600C569F1 /* AppDelegate.swift in Sources */,
 				464434FA279C012600C569F1 /* SceneDelegate.swift in Sources */,
+				464695CC27A4FC8B00F3AD78 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

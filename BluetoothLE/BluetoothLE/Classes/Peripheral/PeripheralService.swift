@@ -12,20 +12,20 @@ import CoreBluetooth
 
 // MARK: - 外部非公開
 final public class PeripheralService : NSObject {
-    // ペリフェラルマネージャ
-    var manager: CBPeripheralManager? = nil
+    /// ペリフェラルマネージャ
+    private var manager: CBPeripheralManager? = nil
     
-    // PeripheralServiceのidentifier
-    let id = UUID().uuidString
+    /// PeripheralServiceのidentifier
+    public let id = UUID().uuidString
     
-    // アドバタイズのサービスIDリスト
-    var serviceUUID : [CBUUID] = []
+    /// アドバタイズのサービスIDリスト
+    var serviceList : [CBMutableService] = []
     
-    // デリゲート
+    /// デリゲート
     public var delegate: PeripheralServiceDelegate? = nil
     
-    // ペリフェラルマネージャオプション
-    let managerOptions = [
+    /// ペリフェラルマネージャオプション
+    private let managerOptions = [
         // Bluetoothが電源オフ状態にある場合にシステムが警告するようにする
         CBPeripheralManagerOptionShowPowerAlertKey: true
     ]
@@ -53,24 +53,26 @@ extension PeripheralService : Service {
     }
     
     /// アドバタイズのサービスIDを追加する
-    /// - Parameter uuid: UUIDの文字列
+    /// - Parameter builder: サービスビルダー
     /// - Returns: 追加後のサービス数
     /// - Remark: BLEで用いるサービス用のUUIDは以下の方法で作成
     ///
     /// -- ターミナルでuuidgenを入力した文字列
     ///
     /// -- UUID().uuidStringで作成
-    public func addAdvertisementService(uuid : String) -> Int {
-        if uuid.isEmpty { return -1 }
-        serviceUUID.append(CBUUID(string: uuid))
-        return serviceUUID.count
+    public func addAdvertisementService(builder: PeripheralServiceBuilder) -> Bool {
+        guard let service = builder.service else { return false }
+        
+        manager?.add(service)
+        serviceList.append(service)
+        
+        return true
     }
     
     /// アドバタイズのサービスIDを全て削除する
-    /// - Returns: 削除後のサービス数
-    public func clearServiceUUID() -> Int {
-        serviceUUID.removeAll()
-        return serviceUUID.count
+    public func clearServiceUUID() {
+        serviceList.removeAll()
+        manager?.removeAllServices()
     }
     
     /// アドバタイズを開始
@@ -95,14 +97,14 @@ extension PeripheralService : Service {
             localName = "PeripheralDevice"
         }
         
-        if serviceUUID.isEmpty {
+        if serviceList.isEmpty {
             throw PeripheralServiceError.AdvertisementServiceIdNotAdded
         }
-        
+
         // アドバタイズデータの作成
         let advertisementData = [
             CBAdvertisementDataLocalNameKey: localName!,
-            CBAdvertisementDataServiceUUIDsKey:serviceUUID
+            CBAdvertisementDataServiceUUIDsKey:serviceList.map { $0.uuid }
         ] as [String : Any]
         
         manager!.startAdvertising(advertisementData)
