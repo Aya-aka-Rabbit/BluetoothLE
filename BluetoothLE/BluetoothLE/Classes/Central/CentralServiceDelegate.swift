@@ -8,6 +8,8 @@
 import Foundation
 
 // MARK: - 必須プロトコル
+
+/// 親機(セントラル)のサービスデリゲート
 public protocol CentralServiceDelegate : BluetoothLEStateDelegate, CentralServiceOptionalDelegate {
     
     /// 親機(セントラル)がスキャン中に子機(ペリフェラル)を検出した際の通知
@@ -18,6 +20,8 @@ public protocol CentralServiceDelegate : BluetoothLEStateDelegate, CentralServic
 }
 
 // MARK: - BluetoothLEStateDelegateオプショナルプロトコル
+
+/// 親機(セントラル)のサービスデリゲート
 public extension CentralServiceDelegate {
     
     /// Bluetoothの電源が現在オンになった通知
@@ -40,6 +44,8 @@ public extension CentralServiceDelegate {
 }
 
 // MARK: - CentralServiceOptionalDelegateオプショナルプロトコル
+
+/// 親機(セントラル)のサービスオプショナルデリゲート
 public protocol CentralServiceOptionalDelegate {
     
     /// 親機(セントラル)が子機(ペリフェラル)に接続した際の通知
@@ -55,6 +61,7 @@ public protocol CentralServiceOptionalDelegate {
     func didPeripheralDisconnect(peripheralId:String, error: Error?)
 }
 
+/// 親機(セントラル)のサービスデリゲート
 public extension CentralServiceDelegate {
 
     /// 親機(セントラル)が子機(ペリフェラル)に接続した際の通知

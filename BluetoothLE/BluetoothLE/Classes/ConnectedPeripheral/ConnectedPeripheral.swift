@@ -8,32 +8,22 @@
 import Foundation
 import CoreBluetooth
 
+/// 親機(セントラル)と接続済みの子機(ペリフェラル)サービスクラス
 public class ConnectedPeripheral : NSObject {
     
     /// 接続している子機(ペリフェラル)のインスタンス
     private (set) var peripheral : CBPeripheral
-    
+
     /// デリゲート
     public var delegate: ConnectedPeripheralDelegate? = nil
     
     /// 子機(ペリフェラル)検出時の情報
     public var discoveryData : DiscoveryPeripheralData;
   
-    /// 子機(ペリフェラル)のID
-    public var peripheralId : String {
-        get {
-            peripheral.identifier.uuidString
-        }
-    }
-    
-    /// 子機(ペリフェラル)の接続状況
-    public var state : CBPeripheralState {
-        get {
-            return peripheral.state
-        }
-    }
-    
     /// コンストラクタ
+    /// - Parameters:
+    ///   - peripheral: 接続済みの子機(ペリフェラル)
+    ///   - discoveryData: 子機(ペリフェラル)検出時の情報
     init(peripheral: CBPeripheral, discoveryData: DiscoveryPeripheralData) {
         self.peripheral = peripheral
         self.discoveryData = discoveryData
@@ -94,6 +84,26 @@ public class ConnectedPeripheral : NSObject {
         }
         
         return characteristic
+    }
+}
+
+// MARK: - 外部公開
+
+/// 親機(セントラル)と接続済みの子機(ペリフェラル)サービスクラス
+extension ConnectedPeripheral {
+    
+    /// 子機(ペリフェラル)のID
+    public var peripheralId : String {
+        get {
+            peripheral.identifier.uuidString
+        }
+    }
+    
+    /// 子機(ペリフェラル)の接続状況
+    public var state : CBPeripheralState {
+        get {
+            return peripheral.state
+        }
     }
     
     /// 子機(ペリフェラル)の公開している指定したサービスを問い合わせる
@@ -202,7 +212,4 @@ public class ConnectedPeripheral : NSObject {
         
         return true
     }
-    
 }
-
-

@@ -150,14 +150,6 @@
                                     <action selector="onDisconnect:" destination="p8z-xO-0oP" eventType="touchUpInside" id="sDf-zP-Vqj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pY-vy-QpU">
-                                <rect key="frame" x="305" y="103" width="67" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="再接続"/>
-                                <connections>
-                                    <action selector="onReconnect:" destination="p8z-xO-0oP" eventType="touchUpInside" id="ISS-0B-mrM"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="書き込み専用" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvR-4d-6JZ">
                                 <rect key="frame" x="41" y="389" width="248" height="34"/>
                                 <constraints>
@@ -237,7 +229,6 @@
                             <constraint firstItem="aXf-sV-xbi" firstAttribute="top" secondItem="6cf-j2-6Ce" secondAttribute="bottom" constant="8" id="D92-nK-h1p"/>
                             <constraint firstItem="Vy6-7z-AE5" firstAttribute="bottom" secondItem="aXf-sV-xbi" secondAttribute="bottom" constant="495" id="DrX-6J-qQp"/>
                             <constraint firstItem="WOt-Mk-kjz" firstAttribute="trailing" secondItem="p9Z-6c-wls" secondAttribute="trailing" id="Erg-pe-pNg"/>
-                            <constraint firstItem="9K7-mD-ziO" firstAttribute="baseline" secondItem="0pY-vy-QpU" secondAttribute="baseline" id="F8R-wg-lLb"/>
                             <constraint firstItem="Vy6-7z-AE5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VF8-vb-DUy" secondAttribute="trailing" symbolic="YES" id="GPW-ke-KYX"/>
                             <constraint firstItem="Vy6-7z-AE5" firstAttribute="trailing" secondItem="xP0-6u-lwF" secondAttribute="trailing" constant="79" id="Gnh-ox-5z9"/>
                             <constraint firstItem="wwA-Nc-vYu" firstAttribute="top" secondItem="IMY-mN-oDt" secondAttribute="bottom" constant="8" id="Gyr-ao-HM4"/>
@@ -245,9 +236,7 @@
                             <constraint firstItem="Nke-Jd-52F" firstAttribute="leading" secondItem="VF8-vb-DUy" secondAttribute="leading" id="JoB-aV-D8f"/>
                             <constraint firstItem="Vy6-7z-AE5" firstAttribute="trailing" secondItem="0YG-HM-vls" secondAttribute="trailing" constant="45" id="NDG-tm-q95"/>
                             <constraint firstItem="Nke-Jd-52F" firstAttribute="top" secondItem="9K7-mD-ziO" secondAttribute="bottom" constant="8" symbolic="YES" id="NPb-Md-R2T"/>
-                            <constraint firstItem="0pY-vy-QpU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9K7-mD-ziO" secondAttribute="trailing" constant="8" symbolic="YES" id="NqP-ji-Ux5"/>
                             <constraint firstItem="JOj-mv-Jkq" firstAttribute="centerY" secondItem="GXI-PD-Uc1" secondAttribute="centerY" id="OI6-HC-olc"/>
-                            <constraint firstItem="Vy6-7z-AE5" firstAttribute="trailing" secondItem="0pY-vy-QpU" secondAttribute="trailing" constant="42" id="OZv-B8-Awv"/>
                             <constraint firstItem="tvR-4d-6JZ" firstAttribute="centerY" secondItem="kiC-Tz-t55" secondAttribute="centerY" id="Pg5-8Q-brK"/>
                             <constraint firstItem="Vy6-7z-AE5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1rB-LB-kih" secondAttribute="trailing" symbolic="YES" id="PtU-7R-Ttb"/>
                             <constraint firstItem="1rB-LB-kih" firstAttribute="top" secondItem="wwA-Nc-vYu" secondAttribute="bottom" constant="19" id="PvT-gP-gUF"/>

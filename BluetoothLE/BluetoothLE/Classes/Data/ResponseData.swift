@@ -8,6 +8,7 @@
 import Foundation
 import CoreBluetooth
 
+/// 子機(ペリフェラル)からの応答データ
 public class ResponseData
 {
     /// サービス
@@ -38,19 +39,19 @@ public class ResponseData
     }
     
     /// 受信したデータを文字列として取得する
-    /// - Returns: 受信した文字列
+    /// - Returns: 受信した文字列データ
     public func getStringValue() -> String? {
         return self.characteristic?.getStringValue()
     }
     
     /// 受信したデータを浮動小数点として取得する
-    /// - Returns: 受信した浮動小数点
+    /// - Returns: 受信した浮動小数点データ
     public func getDoubleValue() -> Double? {
         return self.characteristic?.getDoubleValue()
     }
     
     /// 受信したデータを整数として取得する
-    /// - Returns: 受信した整数
+    /// - Returns: 受信した整数データ
     public func getIntValue() -> Int? {
         return self.characteristic?.getIntValue()
     }

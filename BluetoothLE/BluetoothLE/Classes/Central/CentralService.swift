@@ -2,12 +2,13 @@
 //  CentralService.swift
 //  BluetoothLE
 //
-//  親機(セントラル)としてサービスを提供し、子機(ペリフェラル)と通信する
+//  Created by r.nishizaki on 2022/01/28.
 //
 
 import Foundation
 import CoreBluetooth
 
+/// 親機(セントラル)としてサービスを提供し、子機(ペリフェラル)と通信するクラス
 final public class CentralService : NSObject {
  
     /// セントラルマネージャ
@@ -45,7 +46,9 @@ final public class CentralService : NSObject {
 }
 
 // MARK: - 外部公開
-extension CentralService : Service {
+
+/// 親機(セントラル)としてサービスを提供し、子機(ペリフェラル)と通信するクラス
+extension CentralService : BluetoothLEServiceProtocol {
     
     /// CentralServiceのidentifier
     public var identifier: String {
@@ -68,7 +71,6 @@ extension CentralService : Service {
     ///
     ///  startWithServiceIdの使用を推奨する
     func start(allowDuplicates:Bool = false) throws -> Bool {
-        
         return try startWithServiceId(id:"", allowDuplicates: allowDuplicates)
     }
     
@@ -141,28 +143,7 @@ extension CentralService : Service {
         
         return connectionObject
     }
-    
-    /// 子機(ペリフェラル)との再接続を行う
-    /// - Parameters:
-    ///   - connection: 接続した子機(ペリフェラル)オブジェクト
-    /// - Returns: true:成功 false:失敗
-    /// - throws: CentralServiceError.AlreadyConnected
-    ///
-    ///  対策: 既に接続されているため、一度切断してください
-    public func reconnect(connection:ConnectedPeripheral) throws-> Bool {
-        
-        guard let _ = connection.discoveryData.discoveryTime else { return false }
-        guard let _ = connection.discoveryData.rssi else { return false }
-        guard let _ = connection.discoveryData.peripheral else { return false }
-        if connection.state == .connected { throw CentralServiceError.AlreadyConnected }
-        if connection.state == .connecting { throw CentralServiceError.AlreadyConnected }
-        
-        // 接続
-        manager?.connect(connection.peripheral, options: connectOptions)
-        
-        return true
-    }
-    
+
     /// 子機(ペリフェラル)との接続を切断する
     /// - Parameter connection: 接続した子機(ペリフェラル)オブジェクト
     /// - Returns: true:成功 false:失敗

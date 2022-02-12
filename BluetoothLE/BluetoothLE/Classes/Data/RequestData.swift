@@ -8,6 +8,7 @@
 import Foundation
 import CoreBluetooth
 
+/// 子機(ペリフェラル)へのリクエストデータ
 public class RequestData
 {
     /// サービス
@@ -38,19 +39,19 @@ public class RequestData
     }
     
     /// 受信したデータを文字列として取得する
-    /// - Returns: 受信した文字列
+    /// - Returns: 受信した文字列データ
     public func getStringValue() -> String? {
         return self.characteristic?.getStringValue()
     }
     
     /// 受信したデータを浮動小数点として取得する
-    /// - Returns: 受信した浮動小数点
+    /// - Returns: 受信した浮動小数点データ
     public func getDoubleValue() -> Double? {
         return self.characteristic?.getDoubleValue()
     }
     
     /// 受信したデータを整数として取得する
-    /// - Returns: 受信した整数
+    /// - Returns: 受信した整数データ
     public func getIntValue() -> Int? {
         return self.characteristic?.getIntValue()
     }
@@ -58,6 +59,7 @@ public class RequestData
 
 // MARK: - 読み取り要求
 
+/// 子機(ペリフェラル)への読み取りリクエストデータ
 public class ReadRequestData : RequestData
 {
     /// コンストラクタ
@@ -71,6 +73,7 @@ public class ReadRequestData : RequestData
 
 // MARK: - 書き込み要求
 
+/// 子機(ペリフェラル)への書き込みリクエストデータ
 public class WriteRequestData : RequestData
 {
     /// 更新依頼データ
@@ -93,7 +96,7 @@ public class WriteRequestData : RequestData
     }
     
     /// 受信したデータを文字列として取得する
-    /// - Returns: 受信した文字列
+    /// - Returns: 受信した文字列データ
     public override func getStringValue() -> String? {
         guard let data = self.value else { return nil }
         
@@ -104,7 +107,7 @@ public class WriteRequestData : RequestData
     }
     
     /// 受信したデータを浮動小数点として取得する
-    /// - Returns: 受信した浮動小数点
+    /// - Returns: 受信した浮動小数点データ
     public override func getDoubleValue() -> Double? {
         guard let data = self.value else { return nil }
 
@@ -112,7 +115,7 @@ public class WriteRequestData : RequestData
     }
     
     /// 受信したデータを整数として取得する
-    /// - Returns: 受信した整数
+    /// - Returns: 受信した整数データ
     public override func getIntValue() -> Int? {
         guard let data = self.value else { return nil }
 

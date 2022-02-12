@@ -4,14 +4,13 @@
 //
 //  Created by r.nishizaki on 2022/01/23.
 //
-//  子機(ペリフェラル)としてサービスを提供し、親機(セントラル)と通信する
-//
 
 import Foundation
 import CoreBluetooth
 
-// MARK: - 外部非公開
+/// 子機(ペリフェラル)としてサービスを提供し、親機(セントラル)と通信するクラス
 final public class PeripheralService : NSObject {
+    
     /// ペリフェラルマネージャ
     private var manager: CBPeripheralManager? = nil
     
@@ -40,7 +39,9 @@ final public class PeripheralService : NSObject {
 }
 
 // MARK: - 外部公開
-extension PeripheralService : Service {
+
+/// 子機(ペリフェラル)としてサービスを提供し、親機(セントラル)と通信するクラス
+extension PeripheralService : BluetoothLEServiceProtocol {
     
     /// PeripheralServiceのidentifier
     public var identifier: String {

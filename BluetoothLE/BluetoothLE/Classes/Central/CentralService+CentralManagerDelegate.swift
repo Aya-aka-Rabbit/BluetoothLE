@@ -8,6 +8,7 @@
 import Foundation
 import CoreBluetooth
 
+/// 親機(セントラル)としてサービスを提供し、子機(ペリフェラル)と通信するクラス
 extension CentralService : CBCentralManagerDelegate {
     
     /// 中央マネージャーの状態が更新されるたびに呼び出される

@@ -8,6 +8,7 @@
 import Foundation
 import CoreBluetooth
 
+/// 子機(ペリフェラル)としてサービスを提供し、親機(セントラル)と通信するクラス
 extension PeripheralService : CBPeripheralManagerDelegate {
     
     /// 周辺機器マネージャーがローカルGATTデータベースにサービスを公開したことの通知をハンドリング
@@ -35,10 +36,7 @@ extension PeripheralService : CBPeripheralManagerDelegate {
     
         // 受信データの取り出し
         requests.forEach { request in
-            
-            print(String(data: request.value!, encoding: .utf8))
-            print(request.characteristic.properties.rawValue)
-            print("didReceiveWrite\(request.characteristic.uuid.uuidString)")
+
             // キャラクタリスティックで絞り込む
             let characteristicUUID = request.characteristic.uuid
             let myCharacteristics = serviceList.compactMap{ $0.characteristics }.flatMap{ $0 }
@@ -72,7 +70,6 @@ extension PeripheralService : CBPeripheralManagerDelegate {
     ///   - requests: CBATTRequestオブジェクト
     public func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
         
-        print("didReceiveRead\(request.characteristic.uuid.uuidString)")
         // キャラクタリスティックで絞り込む
         let characteristicUUID = request.characteristic.uuid
         let myCharacteristics = serviceList.compactMap{ $0.characteristics }.flatMap{ $0 }

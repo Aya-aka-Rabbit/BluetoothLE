@@ -8,7 +8,9 @@
 import Foundation
 
 // MARK: - 必須プロトコル
-public protocol ConnectedPeripheralDelegate : ConnectedPeripheralOptionalDelegate {
+
+/// 親機(セントラル)と接続済みの子機(ペリフェラル)サービスデリゲート
+public protocol ConnectedPeripheralDelegate {
     
     /// 子機(ペリフェラル)の公開しているサービスを検出した際の通知
     /// - Parameters:
@@ -30,15 +32,5 @@ public protocol ConnectedPeripheralDelegate : ConnectedPeripheralOptionalDelegat
     ///   - response: レスポンスデータ
     ///   - error: エラー情報
     func didReceivedResponseFrom(_ connectedPeripheral:ConnectedPeripheral, response:ResponseData, error: Error?)
-}
-
-// MARK: - ConnectedPeripheralOptionalDelegateオプショナルプロトコル
-public protocol ConnectedPeripheralOptionalDelegate {
-    
-
-}
-
-public extension ConnectedPeripheralDelegate {
- 
 }
 

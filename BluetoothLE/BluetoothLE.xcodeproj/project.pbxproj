@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		4615B29D27AE4F2C000D634A /* ResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615B29C27AE4F2C000D634A /* ResponseCode.swift */; };
+		463D4B3627B75C7400A63525 /* BluetoothLEServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463D4B3527B75C7400A63525 /* BluetoothLEServiceProtocol.swift */; };
 		463E9FB427AE251300D4B13D /* RequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463E9FB327AE251300D4B13D /* RequestData.swift */; };
 		463E9FB827AE32FC00D4B13D /* ConnectedCentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463E9FB727AE32FC00D4B13D /* ConnectedCentral.swift */; };
 		46443454279BFA6400C569F1 /* BluetoothLE.h in Headers */ = {isa = PBXBuildFile; fileRef = 46443453279BFA6400C569F1 /* BluetoothLE.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		4615B29C27AE4F2C000D634A /* ResponseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCode.swift; sourceTree = "<group>"; };
+		463D4B3527B75C7400A63525 /* BluetoothLEServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothLEServiceProtocol.swift; sourceTree = "<group>"; };
 		463E9FB327AE251300D4B13D /* RequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestData.swift; sourceTree = "<group>"; };
 		463E9FB727AE32FC00D4B13D /* ConnectedCentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedCentral.swift; sourceTree = "<group>"; };
 		46443450279BFA6400C569F1 /* BluetoothLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BluetoothLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +168,7 @@
 				4657F465279D1A2100C9B84C /* PeripheralServiceError.swift */,
 				4615B29C27AE4F2C000D634A /* ResponseCode.swift */,
 				4657F461279D028200C9B84C /* ServiceManager.swift */,
+				463D4B3527B75C7400A63525 /* BluetoothLEServiceProtocol.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				4657F468279D240500C9B84C /* PeripheralService+PeripheralManagerDelegate.swift in Sources */,
 				46A3AA3D27A4D81600AA4D53 /* ConnectedPeripheral.swift in Sources */,
 				467A104827AF671000C72A59 /* CBCharacteristic+Common.swift in Sources */,
+				463D4B3627B75C7400A63525 /* BluetoothLEServiceProtocol.swift in Sources */,
 				4657F464279D0CD600C9B84C /* PeripheralServiceDelegate.swift in Sources */,
 				46D6571327A39D48003C5563 /* DiscoveryPeripheralData.swift in Sources */,
 				46456DB227A378350069EB84 /* CentralService+CentralManagerDelegate.swift in Sources */,

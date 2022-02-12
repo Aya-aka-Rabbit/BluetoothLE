@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// BluetoothLE の状態通知デリゲート
 public protocol BluetoothLEStateDelegate {
     
     /// Bluetoothの電源が現在オンになった通知

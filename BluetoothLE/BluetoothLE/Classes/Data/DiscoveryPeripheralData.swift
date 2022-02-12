@@ -34,6 +34,7 @@ public struct DiscoveryPeripheralData {
     }
     
     /// コンストラクタ
+    /// - Parameter peripheral: 子機(ペリフェラル)
     init(_ peripheral: CBPeripheral) {
         self.peripheral = peripheral
     }

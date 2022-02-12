@@ -101,19 +101,8 @@ class DetailViewController: UIViewController {
         _ = service?.disconnect(connection: info)
         
         navigationItem.title = "子機の情報(切断済み)"
-    }
-    
-    /// 子機(ペリフェラル)と再接続
-    /// - Parameter sender: ボタン
-    @IBAction func onReconnect(_ sender: Any) {
-        guard let info = peripheralInfo else { return }
-        _ = try? service?.reconnect(connection: info)
         
-        DispatchQueue.main.async { [self] in
-            info.fetchServicesWithServiceId(id: ServiceID)
-        }
-        
-        navigationItem.title = "子機の情報(接続中)"
+        navigationController?.popViewController(animated: true)
     }
     
     /// 子機(ペリフェラル)に文字列を送信

@@ -8,6 +8,7 @@
 import Foundation
 import CoreBluetooth
 
+/// 子機(ペリフェラル)のサービスを作成するためのビルダークラス
 public class PeripheralServiceBuilder {
     
     /// サービス
@@ -27,6 +28,12 @@ public class PeripheralServiceBuilder {
         //サービス,キャラクタリスティックの追加
         service = CBMutableService(type: uuid, primary: true)
     }
+}
+
+// MARK: - 外部公開
+
+/// 子機(ペリフェラル)のサービスを作成するためのビルダークラス
+extension PeripheralServiceBuilder {
     
     /// アドバタイズのサービスに公開する書き込み専用のデータを追加する
     /// - Parameters:
@@ -63,6 +70,15 @@ public class PeripheralServiceBuilder {
         return true
     }
     
+    /// アドバタイズのサービスに公開する読み取りと書き込み両用のデータを追加する
+    /// - Parameters:
+    ///   - code: データを識別するUUIDの文字列
+    /// - Returns: true:成功 false:失敗
+    /// - Remark: BLEで用いるサービス用のUUIDは以下の方法で作成
+    ///
+    /// -- ターミナルでuuidgenを入力した文字列
+    ///
+    /// -- UUID().uuidStringで作成
     public func appendCharacteristic(code: String) -> Bool {
         
         guard let _ = service else { return false }
@@ -123,5 +139,4 @@ public class PeripheralServiceBuilder {
         
         return true
     }
-    
 }

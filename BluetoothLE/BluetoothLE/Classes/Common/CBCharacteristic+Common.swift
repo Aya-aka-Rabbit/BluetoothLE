@@ -8,10 +8,11 @@
 import Foundation
 import CoreBluetooth
 
+/// キャラクタリスティックの拡張
 extension CBCharacteristic {
     
     /// 受信したデータを文字列として取得する
-    /// - Returns: 受信した文字列
+    /// - Returns: 受信した文字列データ
     public func getStringValue() -> String? {
         guard let data = self.value else { return nil }
         
@@ -22,7 +23,7 @@ extension CBCharacteristic {
     }
     
     /// 受信したデータを浮動小数点として取得する
-    /// - Returns: 受信した浮動小数点
+    /// - Returns: 受信した浮動小数点データ
     public func getDoubleValue() -> Double? {
         guard let data = self.value else { return nil }
 
@@ -30,7 +31,7 @@ extension CBCharacteristic {
     }
     
     /// 受信したデータを整数として取得する
-    /// - Returns: 受信した整数
+    /// - Returns: 受信した整数データ
     public func getIntValue() -> Int? {
         guard let data = self.value else { return nil }
 

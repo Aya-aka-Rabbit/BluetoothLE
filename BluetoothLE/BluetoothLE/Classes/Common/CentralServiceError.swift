@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// CentralServiceのエラー
+/// CentralServiceのエラー情報
 public enum CentralServiceError: Error {
     /// 既にスキャンが実行されている
     case AlreadyScanning

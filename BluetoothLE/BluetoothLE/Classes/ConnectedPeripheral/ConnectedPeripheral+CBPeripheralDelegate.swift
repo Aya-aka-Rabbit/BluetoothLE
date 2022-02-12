@@ -8,6 +8,7 @@
 import Foundation
 import CoreBluetooth
 
+/// 親機(セントラル)と接続済みの子機(ペリフェラル)サービスクラス
 extension ConnectedPeripheral : CBPeripheralDelegate {
     
     /// サービスの検出が成功した場合に呼び出される

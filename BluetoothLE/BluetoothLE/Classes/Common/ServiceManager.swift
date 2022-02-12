@@ -7,10 +7,7 @@
 
 import Foundation
 
-public protocol Service {
-    var identifier : String { get }
-}
-
+/// BluetoothLE サービスを管理するマネージャクラス
 final public class ServiceManager {
     
     /// バッテリ情報サービスのUUID
@@ -25,10 +22,20 @@ final public class ServiceManager {
     /// - Note: https://btprodspecificationrefs.blob.core.windows.net/assigned-values/16-bit%20UUID%20Numbers%20Document.pdf
     static let deviceInformationAppleServiceUUID : String = "180A"
     
+    /// 子機(ペリフェラル)のサービスオブジェクト
     static private var peripheralService : PeripheralService? = nil
     
+    /// 親機(セントラル)のサービスオブジェクト
     static private var centralService : CentralService? = nil
+}
+
+// MARK: - 外部公開
+
+/// BluetoothLE サービスを管理するマネージャクラス
+extension ServiceManager {
     
+    /// 子機(ペリフェラル)のサービスオブジェクトを作成する
+    /// - Returns: 子機(ペリフェラル)のサービスオブジェクト
     public static func sharedPeripheral() -> PeripheralService
     {
         if peripheralService == nil {
@@ -38,6 +45,8 @@ final public class ServiceManager {
         return peripheralService!
     }
     
+    /// 親機(セントラル)のサービスオブジェクトを作成する
+    /// - Returns: 親機(セントラル)のサービスオブジェクト
     public static func sharedCentral() -> CentralService
     {
         if centralService == nil {

@@ -8,9 +8,11 @@
 import Foundation
 
 // MARK: - 必須プロトコル
+
+/// 子機(ペリフェラル)のサービスデリゲート
 public protocol PeripheralServiceDelegate : BluetoothLEStateDelegate, PeripheralServiceOptionalDelegate {
     
-    /// 親機(セントラル)と通信する際のアドバタイズの名前を取得する
+    /// 親機(セントラル)と通信する際のアドバタイズの名前の取得依頼通知
     /// - Returns: アドバタイズの名前
     func advertisementLocalName() -> String
     
@@ -23,6 +25,8 @@ public protocol PeripheralServiceDelegate : BluetoothLEStateDelegate, Peripheral
 }
 
 // MARK: - BluetoothLEStateDelegateオプショナルプロトコル
+
+/// 子機(ペリフェラル)のサービスデリゲート
 public extension PeripheralServiceDelegate {
     
     /// Bluetoothの電源が現在オンになった通知
@@ -45,6 +49,8 @@ public extension PeripheralServiceDelegate {
 }
 
 // MARK: - PeripheralServiceOptionalDelegateオプショナルプロトコル
+
+/// 子機(ペリフェラル)のサービスオプショナルデリゲート
 public protocol PeripheralServiceOptionalDelegate {
     
     /// 親機(セントラル)とのアドバタイズを開始したことの通知
@@ -79,6 +85,7 @@ public protocol PeripheralServiceOptionalDelegate {
     func AcquireReadDataByReadRequestFrom(central:ConnectedCentral, request:ReadRequestData) -> Data?
 }
 
+/// 子機(ペリフェラル)のサービスデリゲート
 public extension PeripheralServiceDelegate {
     
     /// 親機(セントラル)とのアドバタイズを開始したことの通知
