@@ -157,26 +157,7 @@ extension ViewController : CentralServiceDelegate  {
     ///   - peripheralId: 接続した子機(ペリフェラル)のID
     ///   - error: 失敗した際のエラー情報
     func didPeripheralConnect(peripheralId:String, error: Error?) {
-        print("子機(ペリフェラル)に接続した")
         tableView.reloadData()
     }
-    
-    /// 親機(セントラル)が子機(ペリフェラル)との接続に切断した際の通知
-    /// - Parameters:
-    ///   - peripheralId: 切断した子機(ペリフェラル)のID
-    ///   - error: 失敗した際のエラー情報
-    func didPeripheralDisconnect(peripheralId:String, error: Error?) {
-        print("子機(ペリフェラル)に接続を解除した")
-    }
-
-    /// Bluetoothの電源が現在オンになった通知
-    func bluetoothPoweredOn() { print("Central Service + bluetoothPoweredOn") }
-   
-    /// Bluetoothの電源が現在オフになった通知
-    func bluetoothPoweredOff() { print("Central Service + bluetoothPoweredOff") }
-    
-    /// BluetoothLowEnergyの使用が許可されていない通知
-    func bluetoothUnauthorized() { print("Central Service + bluetoothUnauthorized") }
-
 }
 
