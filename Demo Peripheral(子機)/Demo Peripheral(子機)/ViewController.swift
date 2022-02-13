@@ -8,6 +8,7 @@
 import UIKit
 import BluetoothLE
 
+/// 子機(ペリフェラル)
 class ViewController: UIViewController {
 
     /// 子機(ペリフェラル)のアドバタイズ名
@@ -61,23 +62,24 @@ class ViewController: UIViewController {
             _ = builder.appendCharacteristic(code: ServiceReadWriteValue)
             // (3) サービスを追加
             _ = service?.addAdvertisementService(builder: builder)
-            // (3) サービスを公開
+            // (4) サービスを公開
             _ = try service?.start()
             text1.text = uuid
         }
         catch let error {
             print(error)
         }
-       
     }
     
     /// アドバタイズを停止
     /// - Parameter sender: ボタン
     @IBAction func onAdvertiseStop(_ sender: Any) {
         _ = service?.stop()
+        text1.text = ""
     }
 }
 
+/// 子機(ペリフェラル)
 extension ViewController : PeripheralServiceDelegate  {
     
     /// 親機(セントラル)と通信する際のアドバタイズの名前を取得する
@@ -126,16 +128,6 @@ extension ViewController : PeripheralServiceDelegate  {
         }
         return nil
     }
-    
-    /// Bluetoothの電源が現在オンになった通知
-    func bluetoothPoweredOn() { print("Peripheral Service + bluetoothPoweredOn") }
-   
-    /// Bluetoothの電源が現在オフになった通知
-    func bluetoothPoweredOff() { print("Peripheral Service + bluetoothPoweredOff") }
-    
-    /// BluetoothLowEnergyの使用が許可されていない通知
-    func bluetoothUnauthorized() { print("Peripheral Service + bluetoothUnauthorized") }
-
 }
 
 
