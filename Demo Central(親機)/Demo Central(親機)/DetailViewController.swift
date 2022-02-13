@@ -105,7 +105,7 @@ class DetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    /// 子機(ペリフェラル)に文字列を送信
+    /// 子機(ペリフェラル)に書き込み専用文字列を送信
     /// - Parameter sender: ボタン
     @IBAction func onSendStringValue(_ sender: Any) {
         
@@ -123,6 +123,8 @@ class DetailViewController: UIViewController {
         }
     }
     
+    /// 子機(ペリフェラル)に読み書き用文字列を送信
+    /// - Parameter sender: ボタン
     @IBAction func onSendReadWriteValue(_ sender: Any) {
         var text = readWriteTextbox.text ?? ""
         text = text.isEmpty ? "テストデータ" : text
@@ -138,6 +140,8 @@ class DetailViewController: UIViewController {
         }
     }
     
+    /// 子機(ペリフェラル)から読み書き用文字列を受信
+    /// - Parameter sender: ボタン
     @IBAction func onReadWriteValue(_ sender: Any) {
         do {
             _ = try peripheralInfo?.readValue(
@@ -147,6 +151,7 @@ class DetailViewController: UIViewController {
             print(error)
         }
     }
+    
     /// 子機(ペリフェラル)から読み取り専用文字列を受信
     /// - Parameter sender: ボタン
     @IBAction func onReadReadOnlyStringValue(_ sender: Any) {
